@@ -1,0 +1,152 @@
+/* Estilos base */
+:host {
+  --primary-color: #2563eb;
+  --danger-color: #dc2626;
+  --text-color: #1e293b;
+  --border-color: #e2e8f0;
+  --bg-color: #f8fafc;
+  --hover-color: #f1f5f9;
+}
+
+.crud-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.crud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-edit {
+  background-color: #f59e0b;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-edit:hover {
+  background-color: #d97706;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Tabela */
+.items-table-container {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.items-table th,
+.items-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.items-table th {
+  background-color: var(--bg-color);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.items-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Estado vazio */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed var(--border-color);
+}
+
+.empty-icon {
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.empty-icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.empty-state p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+/* Ícones */
+.icon-add::before {
+  content: "+";
+}
+
+.icon-edit::before {
+  content: "✏️";
+}
+
+.icon-delete::before {
+  content: "🗑️";
+}

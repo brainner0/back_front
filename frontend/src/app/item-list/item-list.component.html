@@ -1,0 +1,53 @@
+<div class="crud-container">
+  <header class="crud-header">
+    <h1 class="title">LISTA CRUD SENAI</h1>
+    <div class="header-actions">
+      <button routerLink="/items/add" class="btn btn-primary">
+        <i class="icon-add"></i> Adicionar Item
+      </button>
+    </div>
+  </header>
+
+  <div class="crud-content">
+    <div *ngIf="items.length === 0" class="empty-state">
+      <div class="empty-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 6h18M9 6v12m6-12v12M5 6l1 13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-13"></path>
+        </svg>
+      </div>
+      <h3>Nenhum item cadastrado</h3>
+      <p>Comece adicionando um novo item ao sistema</p>
+      <button routerLink="/items/add" class="btn btn-primary">
+        <i class="icon-add"></i> Adicionar Primeiro Item
+      </button>
+    </div>
+
+    <div *ngIf="items.length > 0" class="items-table-container">
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td class="actions">
+              <a [routerLink]="['/items/edit', item.id]" class="btn btn-edit">
+                <i class="icon-edit"></i> Editar
+              </a>
+              <button (click)="deleteItem(item.id)" class="btn btn-danger">
+                <i class="icon-delete"></i> Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
